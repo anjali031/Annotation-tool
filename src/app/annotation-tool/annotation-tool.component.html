@@ -1,0 +1,32 @@
+
+
+<div class="container">
+
+
+<div class="card bg-light mb-3 offset-md-4" style="width:400px" >
+  <div class="card-header">Annotation tool</div>
+  <div class="card-img-top">
+    <img class="card-img-top" src={{data.url}}  alt="Card image" >
+  </div> 
+    <div class="card-body">
+      <form #annotationToolForm="ngForm" (ngSubmit)="onSubmit(annotationToolForm)">
+        <div class="form-group">
+          <input id="imagepath" name="imagepath" #name="ngModel" type="hidden" [(ngModel)]="annotationService.annotationTool.imagepath">
+        </div>
+        <div class="form-group">
+          <label for="text">Your Text :</label>
+          <input class="form-control" id="text"  type="text" name="text" #name="ngModel" [(ngModel)]="annotationService.annotationTool.text" placeholder="Enter your text" required>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-secondary " (click)="skipForm()" >skip</button>
+
+          <button type="submit" class="btn btn-primary " [disabled]="!annotationToolForm.valid">Submit</button>
+        </div>
+      </form>
+
+    </div>
+</div>
+
+
+
+</div>  
